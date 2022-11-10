@@ -17,14 +17,33 @@ function hexFindbtn() {
   colorBox.style.backgroundColor = hexInput.value;
 }
 
-function RGBFindbtn() {}
+function RGBFindbtn() {
+  const RInput = document.getElementById("RInput");
+  const GInput = document.getElementById("GInput");
+  const BInput = document.getElementById("BInput");
+}
 
 function RangeSelector() {}
 
 // hex to rgb converter
 
-String.prototype.convertToRGB = function () {};
+String.prototype.convertToRGB = function () {
+    const hexCode = this;
 
-function hexConvbtn() {}
+    const r = parseInt(hexCode[0] + hexCode[1], 16);
+    const g = parseInt(hexCode[2] + hexCode[3], 16);
+    const b = parseInt(hexCode[4] + hexCode[5], 16);
+
+    return `rgb(${r}, ${g}, ${b})`;
+};
+
+function hexConvbtn() {
+  const hexInput = document.getElementById("hexCInp");
+  const rgbCode = document.getElementById("hexCOut");
+
+  const hexCode = hexInput.value;
+
+  rgbCode.textContent = hexCode.convertToRGB();
+}
 
 function rgbConvbtn() {}
