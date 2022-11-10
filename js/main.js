@@ -1,11 +1,13 @@
 function randompickerbtn() {
   const randomPicker = document.getElementById("randomPicker");
   const hexCode = document.getElementById("randomValuePara");
+
   const data = "0123456789ABCDEF";
   let colorCode = "#";
   for (let i = 0; i < 6; i++) {
     colorCode += data[Math.floor(Math.random() * data.length)];
   }
+
   hexCode.textContent = colorCode;
   randomPicker.style.backgroundColor = colorCode;
 }
@@ -53,4 +55,15 @@ function hexConvbtn() {
   rgbCode.textContent = hexCode.convertToRGB();
 }
 
-function rgbConvbtn() {}
+function rgbConvbtn() {
+  const RInput = document.getElementById("RCInput");
+  const GInput = document.getElementById("GCInput");
+  const BInput = document.getElementById("BCInput");
+  const hexCode = document.getElementById("rgbCOut");
+
+  const r = Number(RInput.value).toString(16);
+  const g = Number(GInput.value).toString(16);
+  const b = Number(BInput.value).toString(16);
+
+  hexCode.textContent = `#${r}${g}${b}`;
+}
