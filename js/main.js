@@ -20,19 +20,22 @@ function hexFindbtn() {
 }
 
 function RGBFindbtn() {
-  const RInput = document.getElementById("RInput");
-  const GInput = document.getElementById("GInput");
-  const BInput = document.getElementById("BInput");
+  const r = document.getElementById("RInput").value;
+  const g = document.getElementById("GInput").value;
+  const b = document.getElementById("BInput").value;
   const rgbColorBox = document.getElementById("rgb-color-box");
-
-  const r = RInput.value;
-  const g = GInput.value;
-  const b = BInput.value;
 
   rgbColorBox.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 }
 
-function RangeSelector() {}
+function RangeSelector() {
+  const r = document.getElementById("RrInput").value;
+  const g = document.getElementById("GrInput").value;
+  const b = document.getElementById("BrInput").value;
+  const rangeColorBox = document.getElementById("range-color-box");
+
+  rangeColorBox.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+}
 
 // hex to rgb converter
 
@@ -47,23 +50,21 @@ String.prototype.convertToRGB = function () {
 };
 
 function hexConvbtn() {
-  const hexInput = document.getElementById("hexCInp");
+  const hexInput = document.getElementById("hexCInp").value;
   const rgbCode = document.getElementById("hexCOut");
 
-  const hexCode = hexInput.value;
-
-  rgbCode.textContent = hexCode.convertToRGB();
+  rgbCode.textContent = hexInput.convertToRGB();
 }
 
 function rgbConvbtn() {
-  const RInput = document.getElementById("RCInput");
-  const GInput = document.getElementById("GCInput");
-  const BInput = document.getElementById("BCInput");
+  const RInput = document.getElementById("RCInput").value;
+  const GInput = document.getElementById("GCInput").value;
+  const BInput = document.getElementById("BCInput").value;
   const hexCode = document.getElementById("rgbCOut");
 
-  const r = Number(RInput.value).toString(16);
-  const g = Number(GInput.value).toString(16);
-  const b = Number(BInput.value).toString(16);
+  const r = Number(RInput).toString(16);
+  const g = Number(GInput).toString(16);
+  const b = Number(BInput).toString(16);
 
   hexCode.textContent = `#${r}${g}${b}`;
 }
